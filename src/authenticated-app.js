@@ -1,0 +1,4 @@
+/* <BrowserRouter>
+  <GlobalStype />
+  <Routes />
+</BrowserRouter>; */
