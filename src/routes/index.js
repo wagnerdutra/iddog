@@ -1,17 +1,25 @@
 import React, { Suspense, lazy } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import ErrorBoundary from 'Components/ErrorBoundary';
 
+import { FullScreenLoading } from 'Components/Loading';
+
 const Feed = lazy(() => import(/* webpackChunkName: "feed-page" */ 'Pages/Feed'));
 
-const categories = ['husky', 'labrador', 'hound', 'pug'];
+const categories = [
+  { query: 'husky', name: 'Husky', default: true },
+  { query: 'labrador', name: 'Labrador' },
+  { query: 'hound', name: 'Hound' },
+  { query: 'pug', name: 'Pug' }
+];
 
 const routes = () => (
   <ErrorBoundary>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<FullScreenLoading />}>
       <Switch>
-        <Route path="/" component={Feed} exact />
+        <Route path="/feed" component={Feed} exact />
+        <Route path="*" render={() => <Redirect to="/feed" />} />
       </Switch>
     </Suspense>
   </ErrorBoundary>

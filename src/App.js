@@ -1,15 +1,8 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes';
-import GlobalStype from './styles/global';
+import AuthenticatedApp from './authenticated-app';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <GlobalStype />
-      <Routes />
-    </BrowserRouter>
-  );
+  return <AuthenticatedApp />;
 }
 
 export default App;
