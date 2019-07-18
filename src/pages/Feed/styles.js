@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -41,11 +41,29 @@ const Content = styled.div`
   width: 100%;
 `;
 
+const fadeInImages = keyframes`
+  0% {
+    margin-top: 40px;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+`;
+
 const ImagesList = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  animation: ${fadeInImages} 0.5s;
+  animation-fill-mode: forwards;
 `;
 
 export { Container, ImagesList, Content, Nav };

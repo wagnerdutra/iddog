@@ -2,14 +2,12 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 
-import { Transition } from './styles';
+import './styles.css';
 
 const CSSTransitionEF = ({ children, inProp }) => (
-  <Transition>
-    <CSSTransition in={inProp} timeout={300} classNames="effect" unmountOnExit>
-      {children}
-    </CSSTransition>
-  </Transition>
+  <CSSTransition in={inProp} timeout={300} classNames="effect" unmountOnExit>
+    {children}
+  </CSSTransition>
 );
 
 CSSTransitionEF.propTypes = {

@@ -39,7 +39,7 @@ Header.defaultProps = {
 function Feed({ location }) {
   const axiosAuth = useAxiosAuth();
 
-  const [categoryImagesList, setCategoryImagesList] = useState({ category: '', list: [] });
+  const [categoryImagesList, setCategoryImagesList] = useState([]);
   const [isLoaging, setIsLoading] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(null);
 
@@ -48,17 +48,17 @@ function Feed({ location }) {
       const params = new URLSearchParams(location.search);
       const categoryQuery = params.get('category') || null;
 
-      setIsLoading(true);
-
       const categoryRoute = categoryQuery || categories.find(category => category.default).query;
 
+      setIsLoading(true);
       setCurrentCategory(categoryRoute);
 
-      const { data } = await axiosAuth.get(`/feed?category=${categoryRoute}`);
+      const {
+        data: { list }
+      } = await axiosAuth.get(`/feed?category=${categoryRoute}`);
 
       setIsLoading(false);
-
-      setCategoryImagesList(data);
+      setCategoryImagesList(list);
     }
 
     fetchCaregoryImageList();
@@ -73,8 +73,8 @@ function Feed({ location }) {
     setModal({ ...modalProperties, showModal: false });
   }
 
-  function handleImageClick({ target }) {
-    const { src: imageSrc } = target;
+  function handleImageClick(img) {
+    const { src: imageSrc } = img;
     setModal({
       showModal: true,
       imageSrc
@@ -85,26 +85,24 @@ function Feed({ location }) {
     <Container>
       <Header currentCategory={currentCategory} />
       <Content>
-        <CSSTransitionEF inProp={!isLoaging}>
-          {isLoaging ? (
-            <Loading />
-          ) : (
-            <ImagesList>
-              {categoryImagesList.list.length > 0 &&
-                categoryImagesList.list.map(categoryImage => (
-                  <CardImage
-                    onClick={handleImageClick}
-                    src={categoryImage}
-                    key={categoryImage}
-                    width={300}
-                    height={300}
-                    margin={10}
-                    cursor
-                  />
-                ))}
-            </ImagesList>
-          )}
-        </CSSTransitionEF>
+        {isLoaging ? (
+          <Loading />
+        ) : (
+          <ImagesList>
+            {categoryImagesList.length > 0 &&
+              categoryImagesList.map(categoryImage => (
+                <CardImage
+                  onClick={handleImageClick}
+                  src={categoryImage}
+                  key={categoryImage}
+                  width={300}
+                  height={300}
+                  margin={10}
+                  cursor
+                />
+              ))}
+          </ImagesList>
+        )}
       </Content>
       <Modal showModal={modalProperties.showModal} closeModal={closeModal}>
         <CardImage
