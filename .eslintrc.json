@@ -27,7 +27,10 @@
     "import/prefer-default-export": 0,
     "no-unused-vars": 1,
     "react-hooks/rules-of-hooks": "error",
-    "import/no-cycle": 0
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-cycle": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0
   },
   "settings": {
     "import/resolver": {

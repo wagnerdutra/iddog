@@ -1,20 +1,22 @@
-import { useUser } from 'Root/context/user-context';
+import { useRef } from 'react';
+import { useAuth } from 'Root/context/auth-context';
 import axios from '../services/api';
 
 function useAxiosAuth() {
-  // const user = useUser();
+  const {
+    data: { token: Authorization }
+  } = useAuth();
 
-  const axiosAuth = {
+  const axiosAuth = useRef({
     get: url =>
       axios.get(url, {
         headers: {
-          Authorization:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpZGRvZy1zZXJ2aWNlIiwic3ViIjoiNWQyZTUxZDc0NzRkYWFmZTAwYjIwMDM5IiwiaWF0IjoxNTYzMzE2Njk1LCJleHAiOjE1NjQ2MTI2OTV9.K_xepGlqlzIkzuZu1I5ScK3NspA7zAGmq9Y0zsOFe2w'
+          Authorization
         }
       })
-  };
+  });
 
-  return axiosAuth;
+  return axiosAuth.current;
 }
 
 export { useAxiosAuth };

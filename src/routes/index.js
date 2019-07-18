@@ -5,7 +5,7 @@ import ErrorBoundary from 'Components/ErrorBoundary';
 
 import { FullScreenLoading } from 'Components/Loading';
 
-const Feed = lazy(() => import(/* webpackChunkName: "feed-page" */ 'Pages/Feed'));
+const Feed = lazy(() => import(/* webpackChunkName: "feed-page" */ 'Pages/Feed/index'));
 
 const categories = [
   { query: 'husky', name: 'Husky', default: true },

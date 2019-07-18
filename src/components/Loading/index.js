@@ -1,9 +1,9 @@
 import React from 'react';
 import gifLoading from 'Root/assets/loader.gif';
 
-import { Container } from './styles';
+import { Container, ImageStyle } from './styles';
 
-const Loading = () => <img src={gifLoading} alt="loading" />;
+const Loading = props => <ImageStyle src={gifLoading} alt="loading" {...props} />;
 
 const FullScreenLoading = () => (
   <Container>

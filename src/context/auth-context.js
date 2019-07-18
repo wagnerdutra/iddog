@@ -1,17 +1,46 @@
 import React from 'react';
-import axios from 'axios';
+import { useAsync } from 'react-async';
+
+import axios from '../services/api';
+
+import { bootstrapApp } from '../utils/bootstrapApp';
+
+import { FullScreenLoading } from '../components/Loading';
 
 const AuthContext = React.createContext();
 
 function AuthProvider(props) {
-  // const login = form => authClient.login(form).then(reload);
-  // const logout = () => authClient.logout().then(reload);
+  const { data = { email: null, token: null }, isPending, reload } = useAsync({
+    promiseFn: bootstrapApp
+  });
 
-  const data = window.localStorage.getItem('userData') || { user: null, token: null };
+  if (isPending) {
+    return <FullScreenLoading />;
+  }
 
-  const register = form => axios.post({ ...form });
+  const register = form =>
+    axios
+      .post(
+        '/signup',
+        { ...form },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      )
+      .then(({ data: { user } }) => {
+        window.localStorage.setItem('userData', JSON.stringify(user));
+        reload();
+        return user;
+      });
 
-  return <AuthContext.Provider value={{ data, register }} {...props} />;
+  const logout = () => {
+    window.localStorage.removeItem('userData');
+    reload();
+  };
+
+  return <AuthContext.Provider value={{ data, register, logout }} {...props} />;
 }
 
 function useAuth() {

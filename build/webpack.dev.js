@@ -14,7 +14,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|(woff(2)?|ttf|eot|svg))$/,
+        test: /\.(png|jpg|gif|(woff(2)?|ttf|eot|otf|svg))$/,
         loader: 'url-loader',
         options: {
           limit: 10 * 1024,

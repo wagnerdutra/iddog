@@ -8,28 +8,31 @@ const CardStyle = styled.div`
   margin: ${props => props.margin}px;
   border-radius: 2%;
 
-  ${props =>
-    props.cursor &&
-    css`
-      cursor: pointer;
-    `}
-
   img {
     transition: all 0.3s;
     width: 100%;
     height: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: cover;
     border-radius: 2%;
     background: transparent url(${gifLoading}) center no-repeat;
     transition: all 0.2s ease-in-out;
 
-    &:hover {
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-      transform: scale(1.05);
-    }
+    ${props =>
+      props.hover &&
+      css`
+        &:hover {
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          transform: scale(1.05);
+        }
+      `}
   }
+
+  ${props =>
+    props.cursor &&
+    css`
+      cursor: pointer;
+    `}
 `;
 
 export { CardStyle };
