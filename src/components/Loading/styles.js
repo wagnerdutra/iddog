@@ -11,11 +11,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  img {
-    width: 50px;
-    height: 50px;
-  }
 `;
 
 export { Container, ImageStyle };
