@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppHeader /> should render correctly 1`] = `
+.c1 {
+  -webkit-letter-spacing: 10px;
+  -moz-letter-spacing: 10px;
+  -ms-letter-spacing: 10px;
+  letter-spacing: 10px;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.c1 span {
+  font-weight: bold;
+}
+
+.c0 {
+  background: var(--main-bg-color);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 100px;
+}
+
+.c0 div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 div p {
+  white-space: nowrap;
+}
+
+.c0 div p span {
+  font-weight: bold;
+}
+
+.c2 {
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 20px;
+}
+
+.c2 li button {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:350px) {
+  .c0 div {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width:1050px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+<div>
+  <header
+    class="c0"
+  >
+    <h1
+      class="c1"
+    >
+      THE
+      <span>
+         IDDOG
+      </span>
+    </h1>
+    <div>
+      <p>
+        Welcome:
+        <span>
+           wagnerdutra1010@gmail.com
+        </span>
+      </p>
+      <ul
+        class="c2"
+      >
+        <li>
+          <button
+            type="button"
+          >
+            Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+</div>
+`;

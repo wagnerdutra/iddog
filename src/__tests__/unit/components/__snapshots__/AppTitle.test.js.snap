@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppTitle /> should render correctly 1`] = `
+.c0 {
+  -webkit-letter-spacing: 10px;
+  -moz-letter-spacing: 10px;
+  -ms-letter-spacing: 10px;
+  letter-spacing: 10px;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.c0 span {
+  font-weight: bold;
+}
+
+<div>
+  <h1
+    class="c0"
+  >
+    THE
+    <span>
+       IDDOG
+    </span>
+  </h1>
+</div>
+`;

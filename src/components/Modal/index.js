@@ -15,7 +15,12 @@ function Modal({ closeModal, children, showModal }) {
 
   return (
     <CSSTransitionEF inProp={showModal}>
-      <Container ref={containerRef} onClick={handleContainerClick} showModal={showModal}>
+      <Container
+        ref={containerRef}
+        onClick={handleContainerClick}
+        showModal={showModal}
+        data-testid="modal-id"
+      >
         {children}
       </Container>
     </CSSTransitionEF>

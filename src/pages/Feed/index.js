@@ -9,7 +9,6 @@ import { useAxiosAuth } from 'Root/hooks/axiosAuth';
 import CardImage from 'Components/CardImage';
 import Loading from 'Components/Loading';
 import Modal from 'Components/Modal';
-import CSSTransitionEF from 'Components/CSSTransitionEF';
 
 import { Container, ImagesList, Content, Nav } from './styles';
 
