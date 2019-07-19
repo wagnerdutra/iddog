@@ -11,6 +11,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  z-index: 999;
 `;
 
 export { Container, ImageStyle };
