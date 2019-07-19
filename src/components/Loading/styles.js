@@ -13,6 +13,8 @@ const Container = styled.div`
   align-items: center;
   position: fixed;
   z-index: 999;
+  top: 0;
+  left: 0;
 `;
 
 export { Container, ImageStyle };

@@ -18,7 +18,7 @@ const routes = () => (
   <ErrorBoundary>
     <Suspense fallback={<FullScreenLoading />}>
       <Switch>
-        <Route path="/feed" component={Feed} exact />
+        <Route path="/feed" component={FullScreenLoading} exact />
         <Route path="*" render={() => <Redirect to="/feed" />} />
       </Switch>
     </Suspense>
