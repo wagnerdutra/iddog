@@ -17,11 +17,10 @@ exports[`<FullScreenLoading /> should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c0 img {
-  width: 50px;
-  height: 50px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
 }
 
 <div>

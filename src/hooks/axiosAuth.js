@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useAuth } from 'Root/context/auth-context';
-import axios from '../services/api';
+import axios from 'Root/services/api';
 
 function useAxiosAuth() {
   const {

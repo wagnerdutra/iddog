@@ -29,13 +29,4 @@ describe('user-context', () => {
     );
     expect(getByTestId('email-id')).toHaveTextContent(email);
   });
-
-  it('should render the UserProvider correctly', () => {
-    const { getByTestId } = render(
-      <UserProvider>
-        <UserConsumer />
-      </UserProvider>
-    );
-    expect(getByTestId('email-id')).toHaveTextContent(email);
-  });
 });

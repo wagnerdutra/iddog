@@ -14,8 +14,9 @@ function UnauthenticatedApp() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!email) return;
     setIsLoading(true);
-    register({ email: 'wagnerdutra1010@gmail.com' });
+    register({ email });
   }
 
   return (

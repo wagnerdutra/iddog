@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useAuth, AuthContext, AuthProvider } from 'Root/context/auth-context';
+import { useAuth, AuthContext } from 'Root/context/auth-context';
 
 import { render, fireEvent } from 'react-testing-library';
 
-import { useAsync } from 'react-async';
+jest.mock('Root/services/api');
 
 const AuthConsumer = () => {
   const { data, register, logout } = useAuth();
@@ -17,8 +17,6 @@ const AuthConsumer = () => {
     </>
   );
 };
-
-jest.mock('react-async');
 
 const auth = {
   data: { email: 'teste@gmail.com', token: '123456' },
@@ -39,29 +37,6 @@ describe('auth-context', () => {
 
     expect(auth.register).toHaveBeenCalledTimes(1);
     expect(auth.logout).toHaveBeenCalledTimes(1);
-
-    const {
-      data: { email, token }
-    } = auth;
-
-    expect(getByTestId('email-id')).toHaveTextContent(email);
-    expect(getByTestId('token-id')).toHaveTextContent(token);
-  });
-
-  it('should render the UserProvider correctly', () => {
-    const reload = jest.fn();
-
-    useAsync.mockReturnValue({
-      data: auth.data,
-      isPending: false,
-      reload
-    });
-
-    const { getByTestId } = render(
-      <AuthProvider>
-        <AuthConsumer />
-      </AuthProvider>
-    );
 
     const {
       data: { email, token }
