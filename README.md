@@ -14,13 +14,13 @@
 
 This project uses Prettier rules + Eslint as style guide. If you use vscode, you can install Prettier and Eslint extension, and active the auto save to auto format your code.
 
-First, install the depencendies.
+First, install the depencencies.
 
 ```
 yarn
 ```
 
-#### In the project directory, you can run:
+#### In the project directory, run:
 
 ```
 yarn start
@@ -41,10 +41,6 @@ yarn build
 
 Builds the app for production to the dist folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## License
-
-> This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Autors
 
