@@ -23,7 +23,7 @@ yarn
 #### In the project directory, run:
 
 ```
-yarn start
+yarn dev
 ```
 
 Runs the app in the development mode.
