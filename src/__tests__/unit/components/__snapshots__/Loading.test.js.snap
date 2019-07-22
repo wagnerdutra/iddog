@@ -28,7 +28,7 @@ exports[`<FullScreenLoading /> should render correctly 1`] = `
     class="c0"
   >
     <p>
-      Carregando...
+      Loading...
     </p>
   </div>
 </div>

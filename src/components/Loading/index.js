@@ -7,7 +7,7 @@ const Loading = props => <ImageStyle src={gifLoading} alt="loading" {...props} /
 
 const FullScreenLoading = () => (
   <Container>
-    <p>Carregando...</p>
+    <p>Loading...</p>
   </Container>
 );
 
