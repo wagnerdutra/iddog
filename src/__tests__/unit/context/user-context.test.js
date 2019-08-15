@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useUser, UserContext, UserProvider } from 'Root/context/user-context';
 
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 const UserConsumer = () => {
   const email = useUser();

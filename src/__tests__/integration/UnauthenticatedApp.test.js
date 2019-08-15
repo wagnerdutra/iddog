@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 
 import UnauthenticatedApp from 'Root/UnauthenticatedApp';
 

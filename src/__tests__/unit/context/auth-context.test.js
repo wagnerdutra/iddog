@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAuth, AuthContext } from 'Root/context/auth-context';
 
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 
 jest.mock('Root/services/api');
 
